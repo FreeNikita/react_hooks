@@ -1,17 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {BrowserRouter as Router} from 'react-router-dom'
-import Routes from 'router'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Routes from 'router';
+import AppBar from 'components/appBar';
 
 const App = () => {
   return (
-    <div>
-      <h3>Hooks</h3>
-      <Router>
-        <Routes />
-      </Router>
-    </div>
-  )
-}
+    <Router>
+      <AppBar />
+      <Routes />
+    </Router>
+  );
+};
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'));
