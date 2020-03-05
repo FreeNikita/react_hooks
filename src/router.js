@@ -2,8 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { ROUTER } from './constants/router'
 
-const Routes = () => {
-    return (
+const Routes = () => (
         <Switch>
             {
                 ROUTER.map(({url, component}) => (
@@ -12,6 +11,5 @@ const Routes = () => {
             }
         </Switch>
     )
-}
 
 export default Routes
