@@ -1,10 +1,10 @@
 import React, {useEffect, useState, useContext} from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import useFetch from 'hooks/useFetch'
-import useLocalStorage from 'hooks/useLocalStorage'
-import { PAGE_LOGIC_URL, PAGE_GLOBAL_URL } from 'constants/router'
-import { CurrentUserContext } from 'contexts/currentUser'
-import BackErrorMessage from "components/backendErrorMessage";
+import useFetch from '../../hooks/useFetch'
+import useLocalStorage from '../../hooks/useLocalStorage'
+import { PAGE_LOGIC_URL, PAGE_GLOBAL_URL } from '../../constants/router'
+import { CurrentUserContext } from '../../contexts/currentUser'
+import BackErrorMessage from "../../components/backendErrorMessage";
 
 const Login = () => {
     const [email, setEmail] = useState('');

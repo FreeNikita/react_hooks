@@ -1,7 +1,7 @@
-import GlobalFeed from 'pages/globalFeed'
-import Article from 'pages/article'
-import Login from 'pages/login'
-import Registration from 'pages/registration'
+import GlobalFeed from '../pages/globalFeed'
+import Article from '../pages/article'
+import Login from '../pages/login'
+import Registration from '../pages/registration'
 
 export const PAGE_GLOBAL_URL = '/';
 export const PAGE_ARTICLE_URL = '/article/:slug';

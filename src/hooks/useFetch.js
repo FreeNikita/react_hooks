@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios'
-import { MAIN_URL } from "constants/auth";
+import { MAIN_URL } from "../constants/auth";
 
 export default url => {
     const [isLoading, setLoading] = useState(false)
