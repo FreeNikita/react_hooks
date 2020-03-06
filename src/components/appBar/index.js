@@ -1,6 +1,6 @@
 import React from 'react'
 import {NavLink, Link} from 'react-router-dom'
-import { APP_BAR_ITEMS } from '../../constants/router'
+import { APP_BAR_ITEMS } from 'constants/router'
 
 const AppBar = () => {
     return (
@@ -23,6 +23,6 @@ const AppBar = () => {
             </div>
         </nav>
     )
-}
+};
 
 export default AppBar
