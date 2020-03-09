@@ -7,8 +7,8 @@ import { getPagination } from 'utils';
 import { stringify } from 'query-string';
 import { limit } from 'constants/other';
 import { PAGE_ARTICLES_URL } from 'constants/router';
-import Loading from "components/loading";
-import ErrorMessage from "components/errorMessage";
+import Loading from 'components/loading';
+import ErrorMessage from 'components/errorMessage';
 
 
 const GlobalFeed = ({ location, match }) => {
