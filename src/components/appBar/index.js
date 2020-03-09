@@ -45,7 +45,7 @@ const AppBar = () => {
                                     </NavLink>
                                 </li>
                                 <li className="nav-item" >
-                                    <NavLink to={`${PAGE_PROFILE_URL}${username}`} className="nav-link" >
+                                    <NavLink to={`${PAGE_PROFILE_URL}/${username}`} className="nav-link" >
                                         <img
                                             className='user-pic'
                                             src={ image}
