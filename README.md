@@ -1,14 +1,13 @@
 
-## Basic project with using REACT HOOKs
+## Basic project with using REACT HOOKs ( Practice )
 
-##Status `In progress`
+## Status 
 
 ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
+! In progress
 ```
+
+### Project
 
 In the project directory, you can run:
 
