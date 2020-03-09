@@ -33,8 +33,8 @@ const Authentication = () => {
       setIsSubmit(true);
       setCurrentUserState((state)=> ({
         ...state,
-        isLoading: true,
-        isLoggedIn: false,
+        isLoading: false,
+        isLoggedIn: true,
         currentUser: response.user
       }));
     }

@@ -1,12 +1,13 @@
 import React, { createContext, useState } from 'react'
 
-export const CurrentUserContext = createContext([{}, () => {}]);
+// eslint-disable-next-line no-unused-vars
+export const CurrentUserContext = createContext([{}, (state) => {}]);
 
 export const CurrentUserProvider = ({children}) => {
     const [ state, setState] = useState({
         isLoading: false,
         isLoggedIn: null,
-        currentUser: null,
+        currentUser: {},
     });
 
     return (
