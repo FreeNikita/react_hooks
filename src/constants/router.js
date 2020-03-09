@@ -12,6 +12,7 @@ export const PAGE_PROFILE_URL = '/profiles';
 export const PAGE_ARTICLE_URL = '/article';
 export const PAGE_ARTICLES_URL = '/articles';
 export const PAGE_TAGS_URL = '/tags';
+export const PAGE_FEED_URL = '/feed';
 
 export const ROUTER = [
   {

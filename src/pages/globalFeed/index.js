@@ -9,6 +9,7 @@ import { limit } from 'constants/other';
 import { PAGE_ARTICLES_URL } from 'constants/router';
 import Loading from 'components/loading';
 import ErrorMessage from 'components/errorMessage';
+import FeedToggler from 'components/feedToggler';
 
 
 const GlobalFeed = ({ location, match }) => {
@@ -36,6 +37,7 @@ const GlobalFeed = ({ location, match }) => {
       <div className="container page">
         <div className="row">
           <div className="col-md-9">
+            <FeedToggler tagName="foo" />
             { isLoading && <Loading />}
             { isError && <ErrorMessage />}
             {
