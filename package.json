@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
+    "path": "^0.12.7",
     "query-string": "^6.11.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -16,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint 'src/**.js' --fix"
+    "lint": "eslint 'src/**/**.js' --fix"
   },
   "eslintConfig": {
     "extends": "airbnb/hooks"
@@ -34,11 +35,13 @@
     ]
   },
   "devDependencies": {
+    "airbnb": "^0.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-import-resolver-webpack": "^0.12.1",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^4.0.0-beta.5"
   },

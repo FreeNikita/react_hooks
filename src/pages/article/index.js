@@ -1,12 +1,9 @@
 import React from 'react';
 
-const ArticleFeed = () => {
+const ArticleFeed = () => (
+  <div>
+    ArticleFeed
+  </div>
+);
 
-    return(
-        <div>
-            ArticleFeed
-        </div>
-    )
-}
-
-export default ArticleFeed
+export default ArticleFeed;

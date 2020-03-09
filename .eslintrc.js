@@ -5,8 +5,14 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        'airbnb',
+        "airbnb/hooks"
     ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -17,7 +23,18 @@ module.exports = {
     "plugins": [
         "react"
     ],
-    rules: {
-        "react/prop-types": 0
+    "rules": {
+        "react/prop-types": 0,
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "import/extensions": "off",
+        "import/no-unresolved": "off",
+        "no-shadow": "off",
+    },
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "webpack.config.js"
+            }
+        }
     }
 };

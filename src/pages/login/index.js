@@ -1,18 +1,18 @@
-import React, {useState, useContext, useEffect} from 'react'
-import {Link, Redirect} from 'react-router-dom'
-import useFetch from 'hooks/useFetch'
-import {PAGE_GLOBAL_URL, PAGE_REGISTER_URL} from 'constants/router'
-import useLocalStorage from "hooks/useLocalStorage";
-import {CurrentUserContext} from "contexts/currentUser";
+import React, { useState, useContext, useEffect } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import useFetch from 'hooks/useFetch';
+import { PAGE_GLOBAL_URL, PAGE_REGISTER_URL } from 'constants/router';
+import useLocalStorage from 'hooks/useLocalStorage';
+import { CurrentUserContext } from 'contexts/currentUser';
 import BackErrorMessage from 'components/backendErrorMessage';
 
 const Authentication = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isSubmit, setIsSubmit] = useState(false);
-  const [{response, isLoading, isError}, setFetch] = useFetch("/users/login");
-  const [ , setToken] = useLocalStorage("token");
-  const [ , setCurrentUserState ] = useContext(CurrentUserContext);
+  const [{ response, isLoading, isError }, setFetch] = useFetch('/users/login');
+  const [, setToken] = useLocalStorage('token');
+  const [, setCurrentUserState] = useContext(CurrentUserContext);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -22,26 +22,26 @@ const Authentication = () => {
         user: {
           email,
           password,
-        }
-      }
-    })
+        },
+      },
+    });
   };
 
-  useEffect( () => {
-    if(response){
+  useEffect(() => {
+    if (response) {
       setToken(response.user.token);
       setIsSubmit(true);
-      setCurrentUserState((state)=> ({
+      setCurrentUserState((state) => ({
         ...state,
         isLoading: false,
         isLoggedIn: true,
-        currentUser: response.user
+        currentUser: response.user,
       }));
     }
-  }, [response, setToken, setCurrentUserState ]);
+  }, [response, setToken, setCurrentUserState]);
 
-  if(isSubmit){
-    return <Redirect to={PAGE_GLOBAL_URL}/>
+  if (isSubmit) {
+    return <Redirect to={PAGE_GLOBAL_URL} />;
   }
 
   return (
@@ -54,7 +54,7 @@ const Authentication = () => {
               <Link to={PAGE_REGISTER_URL}>Need an account?</Link>
             </p>
             <form onSubmit={submitForm}>
-              {isError && <BackErrorMessage backendErrorMessage={isError.errors}/>}
+              {isError && <BackErrorMessage backendErrorMessage={isError.errors} />}
               <fieldset>
                 <fieldset className="form-group">
                   <input
@@ -62,7 +62,7 @@ const Authentication = () => {
                     className="form-control form-control-lg"
                     placeholder="Email"
                     value={email}
-                    onChange={({target: {value}}) => setEmail(value)}
+                    onChange={({ target: { value } }) => setEmail(value)}
                   />
                 </fieldset>
                 <fieldset className="form-group">
@@ -71,7 +71,7 @@ const Authentication = () => {
                     className="form-control form-control-lg"
                     placeholder="Password"
                     value={password}
-                    onChange={({target: {value}}) => setPassword(value)}
+                    onChange={({ target: { value } }) => setPassword(value)}
                   />
                 </fieldset>
                 <button
@@ -87,7 +87,7 @@ const Authentication = () => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
-export default Authentication
+export default Authentication;

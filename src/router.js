@@ -1,15 +1,15 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { ROUTER } from 'constants/router'
+import { ROUTER } from 'constants/router';
 
 const Routes = () => (
-        <Switch>
-            {
-                ROUTER.map(({url, component}) => (
-                    <Route key={url} path={url} component={component} exact/>
+  <Switch>
+    {
+                ROUTER.map(({ url, component }) => (
+                  <Route key={url} path={url} component={component} exact />
                 ))
             }
-        </Switch>
-    );
+  </Switch>
+);
 
-export default Routes
+export default Routes;
