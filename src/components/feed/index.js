@@ -5,9 +5,9 @@ import { PAGE_PROFILE_URL, PAGE_ARTICLE_URL } from 'constants/router';
 const Feed = ({ articles }) => (
   <div>
     {articles.map(({
-      author: { username, image, id }, name, description, createdAt, slug, tagList,
+      author: { username, image }, name, description, createdAt, slug, tagList,
     }) => (
-      <div className="article-preview" key={id}>
+      <div className="article-preview" key={createdAt}>
         <div className="article-meta">
           <Link to={`${PAGE_PROFILE_URL}/${username}`}>
             <img src={image} alt="" />

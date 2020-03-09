@@ -11,6 +11,7 @@ export const PAGE_NEW_ARTICLE_URL = '/register';
 export const PAGE_PROFILE_URL = '/profiles';
 export const PAGE_ARTICLE_URL = '/article';
 export const PAGE_ARTICLES_URL = '/articles';
+export const PAGE_TAGS_URL = '/tags';
 
 export const ROUTER = [
   {
