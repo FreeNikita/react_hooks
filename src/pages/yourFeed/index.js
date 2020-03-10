@@ -11,15 +11,14 @@ import Loading from 'components/loading';
 import ErrorMessage from 'components/errorMessage';
 import FeedToggler from 'components/feedToggler';
 
-
-const GlobalFeed = ({ location, match }) => {
+const YourFeed = ({ location, match }) => {
   const { currentPage, offset } = getPagination(location.search);
   const stringifyParams = stringify({
     limit,
     offset,
   });
 
-  const URL = `${PAGE_ARTICLES_URL}?${stringifyParams}`;
+  const URL = `${PAGE_ARTICLES_URL}/feed?${stringifyParams}`;
   const [{ response, isLoading, isError }, doFetch] = useFetch(URL);
 
   useEffect((
@@ -63,4 +62,4 @@ const GlobalFeed = ({ location, match }) => {
   );
 };
 
-export default GlobalFeed;
+export default YourFeed;
