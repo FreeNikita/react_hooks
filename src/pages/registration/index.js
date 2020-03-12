@@ -5,6 +5,7 @@ import useLocalStorage from 'hooks/useLocalStorage';
 import { PAGE_LOGIC_URL, PAGE_GLOBAL_URL } from 'constants/router';
 import { CurrentUserContext } from 'contexts/currentUser';
 import BackErrorMessage from 'components/backendErrorMessage';
+import { TYPE_SET_AUTHORIZED } from 'constants/reduceType';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ const Login = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const [{ response, isLoading, isError }, setFetch] = useFetch('/users');
   const [, setToken] = useLocalStorage('token');
-  const [, setCurrentUserState] = useContext(CurrentUserContext);
+  const [, dispatch] = useContext(CurrentUserContext);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -33,14 +34,9 @@ const Login = () => {
     if (response) {
       setToken(response.user.token);
       setIsSubmit(true);
-      setCurrentUserState((state) => ({
-        ...state,
-        isLoading: false,
-        isLoggedIn: true,
-        currentUser: response.user,
-      }));
+      dispatch({ type: TYPE_SET_AUTHORIZED, payload: response.user });
     }
-  }, [response, setToken, setCurrentUserState]);
+  }, [response, setToken, dispatch]);
 
   if (isSubmit) {
     return <Redirect to={PAGE_GLOBAL_URL} />;
