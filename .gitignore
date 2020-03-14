@@ -25,3 +25,4 @@ package-lock.json
 
 .idea
 ./node_modules
+yarn.lock
