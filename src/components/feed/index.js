@@ -2,22 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PAGE_PROFILE_URL, PAGE_ARTICLE_URL } from 'constants/router';
 import TagList from 'components/tagList';
+import AddToFavorite from 'components/addToFavorite';
 
 const Feed = ({ articles }) => (
   <div>
     {articles.map(({
-      author: { username, image }, name, description, createdAt, slug, tagList,
+      author: { username, image }, name, description, createdAt, slug, tagList, favorited,
+      favoritesCount,
     }) => (
       <div className="article-preview" key={createdAt}>
         <div className="article-meta">
           <Link to={`${PAGE_PROFILE_URL}/${username}`}>
             <img src={image} alt="" />
           </Link>
-        </div>
-        <div className="info">
-          <Link to={`${PAGE_PROFILE_URL}/${username}`} className="author">
-            {username}
-          </Link>
+
+          <div className="info">
+            <Link to={`${PAGE_PROFILE_URL}/${username}`} className="author">
+              {username}
+            </Link>
+          </div>
+          <div className="pull-xs-right">
+            <AddToFavorite
+              isFavorite={favorited}
+              articleSlug={slug}
+              favoritesCount={favoritesCount}
+            />
+          </div>
         </div>
         <span className="date">{createdAt}</span>
         <Link to={`${PAGE_ARTICLE_URL}/${slug}`} className="preview-link">
