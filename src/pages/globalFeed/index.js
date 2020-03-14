@@ -10,6 +10,7 @@ import { PAGE_ARTICLES_URL } from 'constants/router';
 import Loading from 'components/loading';
 import ErrorMessage from 'components/errorMessage';
 import FeedToggler from 'components/feedToggler';
+import Banner from 'components/banner';
 
 
 const GlobalFeed = ({ location, match }) => {
@@ -28,12 +29,7 @@ const GlobalFeed = ({ location, match }) => {
 
   return (
     <div className="home-page">
-      <div className="banner">
-        <div className="container">
-          <h1>Medium clone</h1>
-          <p>Medium clone</p>
-        </div>
-      </div>
+      <Banner />
       <div className="container page">
         <div className="row">
           <div className="col-md-9">
