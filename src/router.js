@@ -4,11 +4,9 @@ import { ROUTER } from 'constants/router';
 
 const Routes = () => (
   <Switch>
-    {
-                ROUTER.map(({ url, component }) => (
-                  <Route key={url} path={url} component={component} exact />
-                ))
-            }
+    {ROUTER.map(({ url, component, exact }) => (
+      <Route key={url} path={url} component={component} exact={exact} />
+    ))}
   </Switch>
 );
 

@@ -1,12 +1,13 @@
-import GlobalFeed from '../pages/globalFeed';
-import TagFeed from '../pages/tagFeed';
-import YourFeed from '../pages/yourFeed';
-import Article from '../pages/article';
-import CreateArticle from '../pages/createArticle';
-import EditArticle from '../pages/editArticle';
-import Login from '../pages/login';
-import Registration from '../pages/registration';
-import UserSettings from '../pages/userSettings';
+import GlobalFeed from 'pages/globalFeed';
+import TagFeed from 'pages/tagFeed';
+import YourFeed from 'pages/yourFeed';
+import Article from 'pages/article';
+import CreateArticle from 'pages/createArticle';
+import EditArticle from 'pages/editArticle';
+import Login from 'pages/login';
+import Registration from 'pages/registration';
+import UserSettings from 'pages/userSettings';
+import UserProfile from 'pages/userProfile';
 
 export const PAGE_GLOBAL_URL = '/';
 export const PAGE_TAGS_URL = '/tags';
@@ -18,6 +19,7 @@ export const PAGE_LOGIC_URL = '/login';
 export const PAGE_REGISTER_URL = '/register';
 
 export const PAGE_PROFILE_URL = '/profiles';
+export const PAGE_PROFILE_BY_SLUG_URL = '/profiles/:slug';
 export const PAGE_SETTINGS_URL = '/settings';
 
 export const PAGE_ARTICLE_URL = '/article';
@@ -30,6 +32,7 @@ export const ROUTER = [
   {
     url: PAGE_GLOBAL_URL,
     component: GlobalFeed,
+    exact: true,
   },
   {
     url: PAGE_FEED_BY_TAG_URL,
@@ -66,5 +69,9 @@ export const ROUTER = [
   {
     url: PAGE_SETTINGS_URL,
     component: UserSettings,
+  },
+  {
+    url: PAGE_PROFILE_BY_SLUG_URL,
+    component: UserProfile,
   },
 ];
