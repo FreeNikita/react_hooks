@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import ArticleForm from 'components/articleForm';
 import useFetch from 'hooks/useFetch';
-import { PAGE_ARTICLE_URL, PAGE_GLOBAL_URL } from 'constants/router';
+import { PAGE_ARTICLES_URL, PAGE_GLOBAL_URL } from 'constants/router';
 import { CurrentUserContext } from 'contexts/currentUser';
 
 const CreateArticle = () => {
@@ -37,7 +37,7 @@ const CreateArticle = () => {
   }
 
   if (isSuccessfulSubmit) {
-    return <Redirect to={`${PAGE_ARTICLE_URL}/${response.article.slug}`} />;
+    return <Redirect to={`${PAGE_ARTICLES_URL}/${response.article.slug}`} />;
   }
 
   return (

@@ -3,6 +3,7 @@ import TagFeed from '../pages/tagFeed';
 import YourFeed from '../pages/yourFeed';
 import Article from '../pages/article';
 import CreateArticle from '../pages/createArticle';
+import EditArticle from '../pages/editArticle';
 import Login from '../pages/login';
 import Registration from '../pages/registration';
 
@@ -19,6 +20,7 @@ export const PAGE_PROFILE_URL = '/profiles';
 export const PAGE_ARTICLE_URL = '/article';
 export const PAGE_ARTICLES_URL = '/articles';
 export const PAGE_ARTICLES_NEW_URL = '/articles/new';
+export const PAGE_ARTICLES_EDIT_URL = '/articles/:slug/edit';
 
 
 export const ROUTER = [
@@ -49,5 +51,13 @@ export const ROUTER = [
   {
     url: PAGE_ARTICLES_NEW_URL,
     component: CreateArticle,
+  },
+  {
+    url: PAGE_ARTICLES_NEW_URL,
+    component: CreateArticle,
+  },
+  {
+    url: PAGE_ARTICLES_EDIT_URL,
+    component: EditArticle,
   },
 ];
