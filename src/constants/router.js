@@ -2,6 +2,7 @@ import GlobalFeed from '../pages/globalFeed';
 import TagFeed from '../pages/tagFeed';
 import YourFeed from '../pages/yourFeed';
 import Article from '../pages/article';
+import CreateArticle from '../pages/createArticle';
 import Login from '../pages/login';
 import Registration from '../pages/registration';
 
@@ -14,11 +15,10 @@ export const PAGE_ARTICLE_BY_SLAG_URL = '/article/:slug';
 export const PAGE_LOGIC_URL = '/login';
 export const PAGE_REGISTER_URL = '/register';
 
-export const PAGE_NEW_ARTICLE_URL = '/register';
-
 export const PAGE_PROFILE_URL = '/profiles';
 export const PAGE_ARTICLE_URL = '/article';
 export const PAGE_ARTICLES_URL = '/articles';
+export const PAGE_ARTICLES_NEW_URL = '/articles/new';
 
 
 export const ROUTER = [
@@ -45,5 +45,9 @@ export const ROUTER = [
   {
     url: PAGE_REGISTER_URL,
     component: Registration,
+  },
+  {
+    url: PAGE_ARTICLES_NEW_URL,
+    component: CreateArticle,
   },
 ];
