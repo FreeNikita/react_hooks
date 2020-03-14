@@ -16,6 +16,7 @@ export default (url) => {
   }, []);
 
   useEffect(() => {
+    let isSkipResponseAfterDestroy = false;
     const requestOption = {
       ...options,
       ...{
@@ -27,15 +28,25 @@ export default (url) => {
     if (isLoading) {
       axios(MAIN_URL + url, requestOption)
         .then((res) => {
-          setResponse(res.data);
+          if (!isSkipResponseAfterDestroy) {
+            setResponse(res.data);
+          }
         })
         .catch((err) => {
-          setError(err.response.data);
+          if (!isSkipResponseAfterDestroy) {
+            setError(err.response.data);
+          }
         })
         .finally(() => {
-          setLoading(false);
+          if (!isSkipResponseAfterDestroy) {
+            setLoading(false);
+          }
         });
     }
+
+    return () => {
+      isSkipResponseAfterDestroy = true;
+    };
   }, [isLoading, options, url, token]);
 
   return [{ response, isLoading, isError }, doFetch];
