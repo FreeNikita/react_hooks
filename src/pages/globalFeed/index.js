@@ -36,19 +36,17 @@ const GlobalFeed = ({ location, match }) => {
             <FeedToggler />
             { isLoading && <Loading />}
             { isError && <ErrorMessage />}
-            {
-                            !isLoading && response && (
-                              <>
-                                <Feed articles={response.articles} />
-                                <Pagination
-                                  total={response.articlesCount}
-                                  limit={limit}
-                                  url={match.url}
-                                  currentPage={currentPage}
-                                />
-                              </>
-                            )
-                        }
+            {!isLoading && response && (
+              <>
+                <Feed articles={response.articles} />
+                <Pagination
+                  total={response.articlesCount}
+                  limit={limit}
+                  url={match.url}
+                  currentPage={currentPage}
+                />
+              </>
+            )}
           </div>
           <div className="col-md-3">
             <PopularTags />

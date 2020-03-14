@@ -48,60 +48,56 @@ const ArticleFeed = ({ match }) => {
   return (
     <div className="article-page">
       <div className="banner">
-        {
-              !fetchArticleIsLoading && fetchArticleResponse && (
-              <div className="container">
-                <h1>{fetchArticleResponse.title}</h1>
-                <div className="article-meta">
-                  <Link to={`${PAGE_PROFILE_URL}/${fetchArticleResponse.article.author.username}`}>
-                    <img src={fetchArticleResponse.article.author.image} alt="" />
-                  </Link>
-                  <div className="info">
-                    <Link to={`${PAGE_PROFILE_URL}/${fetchArticleResponse.article.author.username}`}>
-                      {fetchArticleResponse.article.author.username}
-                    </Link>
-                    <span className="date">{fetchArticleResponse.article.createAt}</span>
-                  </div>
-                  {isAuthor && (
-                    <span>
-                      <Link
-                        className="btn btn-outline-secondary btn-sm"
-                        to={`${PAGE_ARTICLES_URL}/${slug}/edit`}
-                      >
-                        <i className="ion-edit" />
-                        Edit Article
-                      </Link>
-                      <button
-                        type="button"
-                        onClick={deleteArticle}
-                        className="btn btn-outline-danger btn-sm"
-                      >
-                        <i className="ion-trash-a" />
-                        Delete article
-                      </button>
-                    </span>
-                  )}
-                </div>
-              </div>
-              )
-          }
+        {!fetchArticleIsLoading && fetchArticleResponse && (
+        <div className="container">
+          <h1>{fetchArticleResponse.title}</h1>
+          <div className="article-meta">
+            <Link to={`${PAGE_PROFILE_URL}/${fetchArticleResponse.article.author.username}`}>
+              <img src={fetchArticleResponse.article.author.image} alt="" />
+            </Link>
+            <div className="info">
+              <Link to={`${PAGE_PROFILE_URL}/${fetchArticleResponse.article.author.username}`}>
+                {fetchArticleResponse.article.author.username}
+              </Link>
+              <span className="date">{fetchArticleResponse.article.createAt}</span>
+            </div>
+            {isAuthor && (
+            <span>
+              <Link
+                className="btn btn-outline-secondary btn-sm"
+                to={`${PAGE_ARTICLES_URL}/${slug}/edit`}
+              >
+                <i className="ion-edit" />
+                Edit Article
+              </Link>
+              <button
+                type="button"
+                onClick={deleteArticle}
+                className="btn btn-outline-danger btn-sm"
+              >
+                <i className="ion-trash-a" />
+                Delete article
+              </button>
+            </span>
+            )}
+          </div>
+        </div>
+        )}
       </div>
       <div className="container page">
         { fetchArticleIsLoading && <Loading />}
         { fetchArticleIsError && <ErrorMessage />}
-        {
-                !fetchArticleIsLoading && fetchArticleResponse && (
-                <div className="row article-content">
-                  <div className="col-xs-12">
-                    <div>
-                      <p>{fetchArticleResponse.article.body}</p>
-                    </div>
-                    <TagList tagList={fetchArticleResponse.article.tagList} />
+        {!fetchArticleIsLoading && fetchArticleResponse && (
+        <div className="row article-content">
+          <div className="col-xs-12">
+            <div>
+              <p>{fetchArticleResponse.article.body}</p>
+            </div>
+            <TagList tagList={fetchArticleResponse.article.tagList} />
 
-                  </div>
-                </div>
-                )
-            }
+          </div>
+        </div>
+        )}
 
       </div>
     </div>
