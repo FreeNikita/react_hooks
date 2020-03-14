@@ -4,7 +4,7 @@
 ## Status 
 
 ```diff
- Finish (15.03.2020)
++ Finish (15.03.2020)
 ```
 
 ## How to start project 
