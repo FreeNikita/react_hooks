@@ -2,12 +2,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import ArticleForm from 'components/articleForm';
 import useFetch from 'hooks/useFetch';
-import { PAGE_ARTICLE_URL, PAGE_GLOBAL_URL } from 'constants/router';
+import { PAGE_ARTICLE_URL, PAGE_GLOBAL_URL, PAGE_ARTICLES_URL } from 'constants/router';
 import { CurrentUserContext } from 'contexts/currentUser';
 
 const CreateArticle = () => {
-  const apiURL = '/articles';
-  const [{ response, isError }, doFetch] = useFetch(apiURL);
+  const [{ response, isError }, doFetch] = useFetch(PAGE_ARTICLES_URL);
   const [{ isLoggenIn }] = useContext(CurrentUserContext);
   const initialValues = {
     title: '',

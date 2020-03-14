@@ -1,14 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
-
 import useFetch from 'hooks/useFetch';
 import { CurrentUserContext } from 'contexts/currentUser';
 import useLocalStorage from 'hooks/useLocalStorage';
 import BackendErrorMessage from 'components/backendErrorMessage';
+import { PAGE_USER_URL } from 'constants/router';
 
 const UserSettings = () => {
-  const apiUrl = '/user';
-  const [{ response, error }, doFetch] = useFetch(apiUrl);
+  const [{ response, error }, doFetch] = useFetch(PAGE_USER_URL);
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [bio, setBio] = useState('');

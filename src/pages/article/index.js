@@ -1,16 +1,19 @@
 import React, { useEffect, useContext, useState } from 'react';
 import useFetch from 'hooks/useFetch';
 import { Link, Redirect } from 'react-router-dom';
-import { PAGE_PROFILE_URL, PAGE_ARTICLES_URL, PAGE_GLOBAL_URL } from 'constants/router';
+import {
+  PAGE_PROFILE_URL, PAGE_ARTICLE_URL, PAGE_GLOBAL_URL, PAGE_ARTICLES_URL,
+} from 'constants/router';
 import Loading from 'components/loading';
 import ErrorMessage from 'components/errorMessage';
 import TagList from 'components/tagList';
 import { CurrentUserContext } from 'contexts/currentUser';
 import { isAuthor as checkAuthor } from 'utils';
 
+
 const ArticleFeed = ({ match }) => {
   const { slug } = match.params;
-  const apiURL = `/articles/${slug}`;
+  const apiURL = `${PAGE_ARTICLES_URL}/${slug}`;
   const [
     {
       response: fetchArticleResponse,
@@ -65,7 +68,7 @@ const ArticleFeed = ({ match }) => {
             <span>
               <Link
                 className="btn btn-outline-secondary btn-sm"
-                to={`${PAGE_ARTICLES_URL}/${slug}/edit`}
+                to={`${PAGE_ARTICLE_URL}/${slug}/edit`}
               >
                 <i className="ion-edit" />
                 Edit Article

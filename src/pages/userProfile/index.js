@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { PAGE_PROFILE_URL } from 'constants/router';
 import useFetch from 'hooks/useFetch';
 import UserArticles from 'pages/userProfile/components/userArticles';
 
 const UserProfile = ({ match, location }) => {
   const { slug } = match.params;
-  const apiUrl = `/profiles/${slug}`;
+  const apiUrl = `${PAGE_PROFILE_URL}/${slug}`;
   const [{ response }, doFetch] = useFetch(apiUrl);
 
   useEffect(() => {
