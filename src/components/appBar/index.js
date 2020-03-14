@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import {
   PAGE_GLOBAL_URL, PAGE_LOGIC_URL, PAGE_REGISTER_URL, PAGE_PROFILE_URL,
-  PAGE_ARTICLES_NEW_URL,
+  PAGE_ARTICLES_NEW_URL, PAGE_SETTINGS_URL,
 } from 'constants/router';
 import { CurrentUserContext } from 'contexts/currentUser';
 
@@ -43,6 +43,13 @@ const AppBar = () => {
                   <NavLink to={PAGE_ARTICLES_NEW_URL} className="nav-link" exact>
                     <i className="ion-compose" />
                     &nbsp; New Post
+                  </NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink to={PAGE_SETTINGS_URL} className="nav-link" exact>
+                    <i className="ion-gear-a" />
+                    &nbsp; Settings
                   </NavLink>
                 </li>
 

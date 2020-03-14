@@ -6,6 +6,7 @@ import CreateArticle from '../pages/createArticle';
 import EditArticle from '../pages/editArticle';
 import Login from '../pages/login';
 import Registration from '../pages/registration';
+import UserSettings from '../pages/userSettings';
 
 export const PAGE_GLOBAL_URL = '/';
 export const PAGE_TAGS_URL = '/tags';
@@ -17,6 +18,8 @@ export const PAGE_LOGIC_URL = '/login';
 export const PAGE_REGISTER_URL = '/register';
 
 export const PAGE_PROFILE_URL = '/profiles';
+export const PAGE_SETTINGS_URL = '/settings';
+
 export const PAGE_ARTICLE_URL = '/article';
 export const PAGE_ARTICLES_URL = '/articles';
 export const PAGE_ARTICLES_NEW_URL = '/articles/new';
@@ -59,5 +62,9 @@ export const ROUTER = [
   {
     url: PAGE_ARTICLES_EDIT_URL,
     component: EditArticle,
+  },
+  {
+    url: PAGE_SETTINGS_URL,
+    component: UserSettings,
   },
 ];
