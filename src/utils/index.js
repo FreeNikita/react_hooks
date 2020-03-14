@@ -9,3 +9,10 @@ export const getPagination = (search) => {
   const offset = currentPage * 10 - limit;
   return { currentPage, offset };
 };
+
+export const isAuthor = (response, currentUserState) => {
+  if (!response || !currentUserState.isLoggedIn) {
+    return false;
+  }
+  return response.article.author.username === currentUserState.currentUser.username;
+};

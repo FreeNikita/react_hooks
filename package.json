@@ -1,7 +1,7 @@
 {
   "name": "hooks",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
